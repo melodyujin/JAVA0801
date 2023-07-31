@@ -85,25 +85,25 @@ create  sequence  seq_subcategory
 increment  by  1
 start with 1;
 
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '가디건');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '점퍼');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '니트');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '티셔츠');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 1 , '가디건');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 1 , '점퍼');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 1 , '니트');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 1 , '티셔츠');
 
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '청바지');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '반바지');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '면바지');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '스커트');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '청바지');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '반바지');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '면바지');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '스커트');
 
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '귀걸이');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '목걸이');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '반지');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '시계');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '귀걸이');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '목걸이');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '반지');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '시계');
 
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 5 , '운동화');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 5 , '구두');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 5 , '스니커즈');
-insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 5 , '슬리퍼');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '운동화');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '구두');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '스니커즈');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '슬리퍼');
 
 
 create   table  product (

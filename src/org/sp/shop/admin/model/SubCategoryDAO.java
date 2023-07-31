@@ -10,12 +10,16 @@ import java.util.List;
 
 import org.sp.shop.admin.domain.SubCategory;
 
+import util.DBManager;
+
 //오직 Subcategory 테이블에 대한 CRUD만을 담당하는 객체
 public class SubCategoryDAO {
-	String url="jdbc:oracle:thin:@localhost:1521:XE";
-	String user="shop";
-	String password="1234";
+	DBManager dbManager;
 	
+	public SubCategoryDAO(DBManager dbManager) {
+		this.dbManager = dbManager;
+	}
+
 	//상위 카테고리에 소속된 하위카테고리 가져오기 
 	public List selectAllByFkey(int topcategory_idx) {
 		Connection con=null;
@@ -24,8 +28,7 @@ public class SubCategoryDAO {
 		List list = new ArrayList();
 		
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con=DriverManager.getConnection(url, user, password);
+			con=dbManager.connect();
 			
 			String sql="select * from subcategory where topcategory_idx=?";
 			pstmt=con.prepareStatement(sql);
@@ -42,35 +45,11 @@ public class SubCategoryDAO {
 				 list.add(sub); //리스트에 추가하기
 			}
 			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			if(rs!=null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if(pstmt!=null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if(con!=null) {
-				try {
-					con.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			
+			dbManager.release(con, pstmt, rs);
 		}
-		
 		return list;
 	}
 }

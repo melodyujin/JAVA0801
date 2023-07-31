@@ -4,12 +4,17 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.sql.Connection;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import util.DBManager;
 
 public class AdminMain extends JFrame{
 	JPanel p_north;
@@ -28,6 +33,7 @@ public class AdminMain extends JFrame{
 	
 	//컨텐츠 페이지 
 	Page[] pages;
+	Connection con;
 	
 	public AdminMain() {
 		
@@ -57,11 +63,11 @@ public class AdminMain extends JFrame{
 		add(p_center);
 		
 		setSize(1100, 600);
-		setVisible(true);
+		//setVisible(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
-		//loginForm = new LoginForm(this);
+
+		loginForm = new LoginForm(this);
 		
 		//최초로 상품페이지는 보여지게..
 		showHide(PRODUCT);
